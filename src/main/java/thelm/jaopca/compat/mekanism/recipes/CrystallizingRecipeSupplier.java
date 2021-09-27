@@ -6,7 +6,6 @@ import java.util.function.Supplier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import mekanism.api.recipes.inputs.chemical.ChemicalStackIngredient;
 import mekanism.api.recipes.inputs.chemical.SlurryStackIngredient;
 import mekanism.common.recipe.impl.ChemicalCrystallizerIRecipe;
 import net.minecraft.item.ItemStack;
@@ -39,6 +38,6 @@ public class CrystallizingRecipeSupplier implements Supplier<ChemicalCrystallize
 		if(stack.isEmpty()) {
 			LOGGER.warn("Empty output in recipe {}: {}", key, output);
 		}
-		return new ChemicalCrystallizerIRecipe(key, (ChemicalStackIngredient<?, ?>)ing, stack);
+		return new ChemicalCrystallizerIRecipe(key, ing, stack);
 	}
 }
